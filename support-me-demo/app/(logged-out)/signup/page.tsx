@@ -23,7 +23,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Calendar } from '@/components/ui/calendar'
 import {formSchema} from '@/utils/schemas'
 
-export default function LogInPage() {
+export default function SignUpPage() {
 
     const form = useForm<z.infer<typeof formSchema>>(
         {
