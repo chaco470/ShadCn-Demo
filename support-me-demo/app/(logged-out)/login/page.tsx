@@ -16,6 +16,8 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { PasswordInput } from '@/components/ui/password-input'
+import { useRouter } from 'next/navigation'
 
 const formSchema = z.object({
     email: z.email().min(1, "Email is required"),
@@ -24,6 +26,8 @@ const formSchema = z.object({
 })
 
 export default function LogInPage() {
+
+    const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>(
         {
@@ -37,6 +41,7 @@ export default function LogInPage() {
 
     const handleSubmit = (data: z.infer<typeof formSchema>) =>{
         console.log(data);
+        router.push("/dashboard");
     }
 
 
@@ -75,7 +80,7 @@ export default function LogInPage() {
                                 <FormItem className="text-left">
                                 <FormLabel>Password</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="" type='password' {...field} />
+                                    <PasswordInput placeholder="" {...field} />
                                 </FormControl>
                                 <FormMessage />
                                 </FormItem>

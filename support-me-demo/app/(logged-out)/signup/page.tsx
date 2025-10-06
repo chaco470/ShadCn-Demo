@@ -11,6 +11,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -22,23 +23,29 @@ import { SelectValue } from '@radix-ui/react-select'
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
 import { Calendar } from '@/components/ui/calendar'
 import {formSchema} from '@/utils/schemas'
+import { PasswordInput } from '@/components/ui/password-input'
+import { Checkbox } from '@/components/ui/checkbox'
+import { useRouter } from 'next/navigation'
 
 export default function SignUpPage() {
+    const router = useRouter();
 
     const form = useForm<z.infer<typeof formSchema>>(
         {
             resolver: zodResolver(formSchema),
             defaultValues:{
                 email: '',
-                accountType: 'personal',
+                password: '',
+                passwordConfirm: '',
                 companyName: '',
-                numberOfEmployees: undefined
+                numberOfEmployees: 0
             }
         }
     );
 
     const handleSubmit = (data: z.infer<typeof formSchema>) =>{
         console.log(data);
+        router.push("/dashboard");
     }
 
     const accountType= form.watch("accountType")
@@ -118,7 +125,8 @@ export default function SignUpPage() {
                                                 type="number"
                                                 min={1}
                                                 placeholder="Number of employees" 
-                                                {...field} />
+                                                {...field} 
+                                                value={field.value?? ""}/>
                                         </FormControl>
                                         <FormMessage />
                                         </FormItem>
@@ -177,9 +185,8 @@ export default function SignUpPage() {
                                     <FormItem>
                                     <FormLabel>Password</FormLabel>
                                     <FormControl>
-                                        <Input 
+                                        <PasswordInput 
                                             placeholder="******"
-                                            type='password'
                                             {...field} />
                                     </FormControl>
                                     <FormMessage />
@@ -193,11 +200,34 @@ export default function SignUpPage() {
                                     <FormItem>
                                     <FormLabel>Confirm password</FormLabel>
                                     <FormControl>
-                                        <Input 
+                                        <PasswordInput 
                                             placeholder=""
-                                            type='password'
                                             {...field} />
                                     </FormControl>
+                                    <FormMessage />
+                                    </FormItem>
+                                )}
+                            />
+                            <FormField
+                                control={form.control}
+                                name="acceptTerms"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <div className='flex'>
+                                            <FormLabel className='pr-2'>Accep Terms and Conditions</FormLabel>
+                                            <FormControl>
+                                                <Checkbox
+                                                    checked={field.value}
+                                                    onCheckedChange={field.onChange}
+                                                />
+                                            </FormControl>
+                                        </div >
+                                        <FormDescription >
+                                            By signing up you need to agree with{" "}
+                                            <Link className="text-primary hover:underline" href={"https://youtu.be/dQw4w9WgXcQ?si=aEdGou3nMe1WQ7DH"}>
+                                                terms and conditions
+                                            </Link>
+                                        </FormDescription>
                                     <FormMessage />
                                     </FormItem>
                                 )}

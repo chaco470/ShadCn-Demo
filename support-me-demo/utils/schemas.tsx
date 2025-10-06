@@ -5,6 +5,7 @@ export const formSchema = z.object({
     accountType: z.enum(['personal','company']),
     companyName: z.string().optional(),
     numberOfEmployees: z.coerce.number().optional(),
+    acceptTerms: z.boolean({error: "accept terms is required"}).refine((checked)=> checked,"accept terms is required"),
     dob: z.date().refine((date)=>{
         const today = new Date();
         const age = new Date(
