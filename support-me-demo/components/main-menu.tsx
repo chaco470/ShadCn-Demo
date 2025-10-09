@@ -31,10 +31,10 @@ const items = [
 
 export default function MainMenu() {
   return (
-    <div className='bg-muted overflow-auto p-4 flex flex-col'>
-        <div className='border-b dark:border-b-black border-b-zinc-500 pb-4'>
+    <nav className='bg-muted overflow-auto p-4 flex flex-col'>
+        <header className='border-b dark:border-b-black border-b-zinc-500 pb-4'>
             <MenuTitle/>
-        </div>
+        </header>
         <div className='py-4 grow'>
             {items.map((item, index) => (
                 <MenuItems key={index} href={item.link}>
@@ -42,7 +42,7 @@ export default function MainMenu() {
                 </MenuItems>
             ))}
         </div>
-        <div className='flex gap-2 items-center'>
+        <footer className='flex gap-2 items-center'>
             <Avatar className='h-9 w-9 shrink-0'>
                 <AvatarFallback className='bg-emerald-500 dark:bg-emerald-700'>
                     ML
@@ -50,7 +50,7 @@ export default function MainMenu() {
             </Avatar>
             <Link href="/" className='hover:underline'>Logout</Link>
             <LightDarkToggle className='ml-auto'/>
-        </div>
-    </div> 
+        </footer>
+    </nav>
   )
 }
