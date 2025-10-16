@@ -1,6 +1,7 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import StatsEmployees from '@/components/stats-employees'
+import StatsEmployees from '@/components/employees/stats-employees'
+import StatsTeams from '@/components/teams/stats-teams'
 
 export default function DashboardPage() {
   return (
@@ -13,7 +14,7 @@ export default function DashboardPage() {
         <StatsEmployees/>
       </TabsContent>
       <TabsContent value="teams">
-        Employees teams
+        <StatsTeams/>
       </TabsContent>  
     </Tabs>
   )
