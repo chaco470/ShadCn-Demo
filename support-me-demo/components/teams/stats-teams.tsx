@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card'
-import { ListTodo, StarIcon, StarOffIcon, Users2 } from 'lucide-react'
+import { ChartPie, ListTodo, StarIcon, Users2 } from 'lucide-react'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -8,6 +8,8 @@ import { Avatar, AvatarFallback } from '../ui/avatar'
 import {totalTeams, teamAvatars} from '@/utils/dumies'
 import { Tooltip, TooltipContent, TooltipProvider } from '../ui/tooltip'
 import { TooltipTrigger } from '@radix-ui/react-tooltip'
+import DistributionTeamsChart from './distribution-teams-chart'
+import SupportTicketResolve from './support-tickets-resolve'
 
 export default function StatsTeams() {
   return (
@@ -56,22 +58,17 @@ export default function StatsTeams() {
                 </TooltipProvider>
             ))}
           </CardContent>
-          <CardFooter>
-
-          </CardFooter>
         </Card>
-        <Card className='flex flex-col'>
+        <Card className='flex flex-col pb-0'>
           <CardHeader className='pb-0'>
-            <CardTitle className='text-base'>
-              Team distribution
+            <CardTitle className='text-base flex justify-between items-center'>
+              <span>Team distribution</span>
+              <ChartPie/>
             </CardTitle>
           </CardHeader>
-          <CardContent className='flex gap-2 items-center'>
-            
+          <CardContent className='!pb-0'>
+            <DistributionTeamsChart/>
           </CardContent>
-          <CardFooter>
-            
-          </CardFooter>
         </Card>
       </div>
       <Card className='my-10'>
@@ -82,10 +79,8 @@ export default function StatsTeams() {
             </CardTitle>
           </CardHeader>
           <CardContent className='pl-0'>
-            <span>Team location trends</span>
+            <SupportTicketResolve/>
           </CardContent>
-          <CardFooter>
-          </CardFooter>
         </Card>
     </>
   )

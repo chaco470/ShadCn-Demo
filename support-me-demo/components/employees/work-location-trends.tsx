@@ -1,6 +1,6 @@
 'use client';
 import React from 'react'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts'
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer} from 'recharts'
 import {workLocationsData} from '@/utils/dumies'
 
 export default function WorkLocationTrends() {
@@ -16,7 +16,7 @@ export default function WorkLocationTrends() {
                 { return <div className='text-sm'>Work from home</div>}}}/>
         <Tooltip separator=': '
                   labelClassName='!font-bold'
-                  wrapperClassName="!text-sm dark:!bg-black rounded-md dark:!border-border"
+                  wrapperClassName="!text-sm dark:!bg-white rounded-md dark:!border-border"
                   formatter={(value, name)=>{
                     if(name==="wfh"){
                       return [value, "Work at Home"]

@@ -113,6 +113,87 @@ export const teamAvatars = [
 
 ];
 
+export const pieChartData = [
+  {name:"Delta",value:55, color:"#84cc16"},
+  {name:"Alpha",value:34, color:"#3b82f6"},
+  {name:"Canary",value:11, color:"#f97316"}
+]
+
+export const lineData = [
+  {
+    name: "Jan",
+    alpha: 40,
+    delta: 24,
+    canary: 24
+  },
+  {
+    name: "Feb",
+    alpha: 30,
+    delta: 13,
+    canary: 22
+  },
+  {
+    name: "Mar",
+    alpha: 20,
+    delta: 98,
+    canary: 22
+  },
+  {
+    name: "Apr",
+    alpha: 27,
+    delta: 39,
+    canary: 20
+  },
+  {
+    name: "May",
+    alpha: 18,
+    delta: 48,
+    canary: 21
+  },
+  {
+    name: "Jun",
+    alpha: 23,
+    delta: 38,
+    canary: 25
+  },
+  {
+    name: "Jul",
+    alpha: 34,
+    delta: 43,
+    canary: 21
+  },
+  {
+    name: "Aug",
+    alpha: 43,
+    delta: 34,
+    canary: 12
+  },
+  {
+    name: "Sep",
+    alpha: 30,
+    delta: 13,
+    canary: 22
+  },
+  {
+    name: "Oct",
+    alpha: 34,
+    delta: 43,
+    canary: 21
+  },
+  {
+    name: "Nov",
+    alpha: 27,
+    delta: 39,
+    canary: 20
+  },
+  {
+    name: "Dev",
+    alpha: 30,
+    delta: 13,
+    canary: 43
+  },
+]
+
 export const totalEmployees = 100;
 export const totalTeams = 8;
 export const presentEmployees = 90;
