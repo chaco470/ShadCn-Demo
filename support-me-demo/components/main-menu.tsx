@@ -5,6 +5,7 @@ import { Avatar } from './ui/avatar'
 import { AvatarFallback } from '@radix-ui/react-avatar'
 import Link from 'next/link'
 import { LightDarkToggle } from './ui/light-dark-toggle'
+import { cn } from '@/lib/utils'
 
 const items = [
     {
@@ -29,10 +30,10 @@ const items = [
     }
 ]
 
-export default function MainMenu() {
+export default function MainMenu({classname}: {classname?:string}) {
   return (
-    <nav className='bg-muted overflow-auto p-4 flex flex-col'>
-        <header className='border-b dark:border-b-black border-b-zinc-500 pb-4'>
+    <nav className={cn(`md:bg-muted overflow-auto p-4 flex flex-col`, classname)}>
+        <header className='hidden md:block border-b dark:border-b-black border-b-zinc-500 pb-4'>
             <MenuTitle/>
         </header>
         <div className='py-4 grow'>

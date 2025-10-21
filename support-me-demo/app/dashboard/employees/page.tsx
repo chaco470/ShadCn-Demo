@@ -1,10 +1,14 @@
 import React from 'react'
+import {employeesMockData} from '@/utils/dumies'
+import { setTimeout } from 'timers/promises'
+import Loading from './loading'
 
-export default function EmployeesPage() {
+export default async function EmployeesPage() {
+  await setTimeout(5000)
   return (
     <div>
         <h2>
-            employees
+            Hempleaos
         </h2>
     </div>
   )

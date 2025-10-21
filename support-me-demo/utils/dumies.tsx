@@ -194,6 +194,24 @@ export const lineData = [
   },
 ]
 
+export const employeesMockData = [
+  { id: 1, firstName: "John", lastName: "Doe", teamName: "alpha", isTeamleader: false, avatar: "/public/images/at.jpg" },
+  { id: 2, firstName: "Maria", lastName: "Gomez", teamName: "beta", isTeamleader: true },
+  { id: 3, firstName: "Liam", lastName: "Smith", teamName: "canary", isTeamleader: false },
+  { id: 4, firstName: "Sophia", lastName: "Brown", teamName: "alpha", isTeamleader: false },
+  { id: 5, firstName: "Ethan", lastName: "Johnson", teamName: "beta", isTeamleader: false },
+  { id: 6, firstName: "Olivia", lastName: "Martinez", teamName: "canary", isTeamleader: true, avatar: "/public/images/rd.png" },
+  { id: 7, firstName: "Noah", lastName: "Wilson", teamName: "alpha", isTeamleader: true, avatar: "/public/images/sw.jpg" },
+  { id: 8, firstName: "Emma", lastName: "Lopez", teamName: "beta", isTeamleader: false },
+  { id: 9, firstName: "Lucas", lastName: "Davis", teamName: "canary", isTeamleader: false },
+  { id: 10, firstName: "Ava", lastName: "Garcia", teamName: "alpha", isTeamleader: false },
+  { id: 11, firstName: "Mason", lastName: "Rodriguez", teamName: "beta", isTeamleader: false },
+  { id: 12, firstName: "Isabella", lastName: "Hernandez", teamName: "canary", isTeamleader: false },
+  { id: 13, firstName: "James", lastName: "Clark", teamName: "alpha", isTeamleader: false },
+  { id: 14, firstName: "Mia", lastName: "Lewis", teamName: "beta", isTeamleader: false },
+  { id: 15, firstName: "Benjamin", lastName: "Walker", teamName: "canary", isTeamleader: false }
+]
 export const totalEmployees = 100;
 export const totalTeams = 8;
 export const presentEmployees = 90;
+
