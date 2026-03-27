@@ -5,12 +5,13 @@ import { cn } from "@/lib/utils"
 import { Input } from "./input"
 import { EyeClosedIcon, EyeIcon } from "lucide-react"
 import { useState } from "react"
-export interface PasswordInputProps extends React.InputHTMLAttributes<HTMLElement> {}
+
+export type PasswordInputProps = React.InputHTMLAttributes<HTMLInputElement>
 
 
 
 const PasswordInput = React.forwardRef<HTMLInputElement, PasswordInputProps>  (
-    ({className, type, ...props}, ref)=>{
+    ({className, ...props}, ref)=>{
         const [showPassword, setShowPassword] = useState(false)
         return (
             <div className="relative">

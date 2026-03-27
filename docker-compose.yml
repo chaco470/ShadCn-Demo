@@ -1,0 +1,13 @@
+services:
+  app:
+    container_name: shadcn-demo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: shadcn-demo:latest
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      NEXT_TELEMETRY_DISABLED: "1"
+    restart: unless-stopped

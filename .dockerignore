@@ -1,0 +1,14 @@
+.git
+.gitignore
+.next
+node_modules
+npm-debug.log
+README.md
+LICENSE
+
+# Ignore root-level clutter but keep app sources
+*
+!support-me-demo/
+!support-me-demo/**
+!Dockerfile
+!.dockerignore

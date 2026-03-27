@@ -30,7 +30,7 @@ import { useRouter } from 'next/navigation'
 export default function SignUpPage() {
     const router = useRouter();
 
-    const form = useForm<z.infer<typeof formSchema>>(
+    const form = useForm<z.input<typeof formSchema>>(
         {
             resolver: zodResolver(formSchema),
             defaultValues:{
@@ -43,7 +43,7 @@ export default function SignUpPage() {
         }
     );
 
-    const handleSubmit = (data: z.infer<typeof formSchema>) =>{
+    const handleSubmit = (data: z.input<typeof formSchema>) =>{
         console.log(data);
         router.push("/dashboard");
     }
@@ -125,8 +125,13 @@ export default function SignUpPage() {
                                                 type="number"
                                                 min={1}
                                                 placeholder="Number of employees" 
-                                                {...field} 
-                                                value={field.value?? ""}/>
+                                                {...field}
+                                                value={typeof field.value === "number" ? field.value : ""}
+                                                onChange={(event) => {
+                                                    const nextValue = event.target.value;
+                                                    field.onChange(nextValue === "" ? undefined : Number(nextValue));
+                                                }}
+                                            />
                                         </FormControl>
                                         <FormMessage />
                                         </FormItem>
